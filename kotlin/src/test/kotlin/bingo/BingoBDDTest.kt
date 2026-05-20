@@ -85,7 +85,7 @@ private fun BingoBoard.whenCellIsDefined(x: Int, y: Int, value: String) {
 }
 
 private fun BingoBoard.whenCellIsMarked(x: Int, y: Int) {
-    markCell(x, y)
+    markCell(Coordinate(x, y))
 }
 
 private fun BingoBoard.thenBoardIsNotInitialized() {
@@ -99,6 +99,6 @@ private fun BingoBoard.thenBoardIsInitialized() {
 private fun BingoBoard.boardInitializeState(): Boolean = isInitialized
 
 private fun BingoBoard.thenCellIsMarked(x: Int, y: Int) {
-    assertThat(isMarked(x, y)).isTrue()
+    assertThat(isMarked(Coordinate(x, y))).isTrue()
 }
 

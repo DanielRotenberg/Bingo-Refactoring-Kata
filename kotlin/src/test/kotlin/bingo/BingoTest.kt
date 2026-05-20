@@ -57,7 +57,7 @@ internal class BingoTest {
     @Test
     fun `a non initialized board cannot be marked`() {
         val board = BingoBoard(1, 1)
-        assertThatThrownBy { board.markCell(0, 0) } //
+        assertThatThrownBy { board.markCell(Coordinate(0, 0)) } //
             .isInstanceOf(RuntimeException::class.java) //
             .hasMessageContaining("not initialized")
     }
@@ -67,7 +67,7 @@ internal class BingoTest {
         val anyValue = "42"
         val board = BingoBoard(1, 1)
         board.defineCell(0, 0, anyValue)
-        board.markCell(0, 0)
-        assertThat(board.isMarked(0, 0)).isTrue()
+        board.markCell(Coordinate(0, 0))
+        assertThat(board.isMarked(Coordinate(0, 0))).isTrue()
     }
 }
